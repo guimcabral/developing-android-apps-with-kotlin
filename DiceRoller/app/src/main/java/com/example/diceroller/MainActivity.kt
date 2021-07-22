@@ -9,6 +9,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var diceImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +20,10 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+        diceImage = binding.diceImage
     }
 
     private fun rollDice() {
-        val diceImage: ImageView = binding.diceImage
         diceImage.setImageResource(
             when (Random.nextInt(1, 7)) {
                 1 -> R.drawable.dice_1
